@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Top Artists
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="isArtistsGet">
+    <ion-card color="dark" *ngFor="let artist of artistList" color="dark">
+        <ion-card-content>
+        <ion-thumbnail item-left>
+        <img [src]="artist.image[2]['#text']">
+      </ion-thumbnail>
+      <h1>{{artist.name}}</h1>
+      <h2><b>Playcount  </b>{{artist.playcount}}</h2>
+      <p><a href="{{artist.url}}">{{artist.url}}</a></p>
+      <button ion-button
+              outline
+              color="danger"
+              item-right
+              large
+              (click)="onDetailsClick(i)">
+        Info
+      </button>
+        </ion-card-content>
+      
+    </ion-card>
+  </ion-list>
+</ion-content>

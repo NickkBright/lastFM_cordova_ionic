@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      {{userInfo.name}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-card color="dark"  *ngIf="isInfoGet">
+ <img [src]="userInfo.image[3]['#text']">
+  <ion-card-content>
+    <ion-card-title>
+     {{userInfo.name}}
+      </ion-card-title>
+    <p>
+      Playcount: {{userInfo.playcount}}
+    </p>
+      <button ion-button
+              outline
+              item-right
+              block
+              large
+              (click)="showTopArtists(userInfo.name)">
+        Top Artists
+      </button>
+  </ion-card-content>
+</ion-card>
+</ion-content>

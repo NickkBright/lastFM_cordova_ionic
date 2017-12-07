@@ -1,0 +1,14 @@
+
+<ion-content padding class="content">
+    <img padding block src="../assets/img/logo.png">
+  <ion-item class="input">
+    <ion-input placeholder="Enter username" type="text" #username></ion-input>
+  </ion-item>
+
+  <button class ="search-button" ion-button
+          block
+          outline
+          (click)="onSearchClick(username.value)">
+    Search
+  </button>
+</ion-content>
